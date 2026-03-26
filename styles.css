@@ -45,6 +45,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -54,6 +55,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  max-width: 100vw;
 }
 
 /* =================== UTILITIES =================== */
@@ -85,10 +87,13 @@ body {
   z-index: 1000;
   padding: 16px 40px;
   transition: var(--transition);
+  background: rgba(5, 8, 16, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .navbar.scrolled {
-  background: rgba(5, 8, 16, 0.85);
+  background: rgba(5, 8, 16, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -276,6 +281,7 @@ body {
   justify-content: center;
   overflow: hidden;
   padding: 140px 24px 80px;
+  max-width: 100vw;
 }
 
 .hero-bg {
@@ -1403,7 +1409,9 @@ body {
 .problem-stat-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 2px;
   background: var(--gradient-main);
   opacity: 0.6;
@@ -1860,7 +1868,7 @@ body {
 
 @media (max-width: 900px) {
   .navbar {
-    padding: 14px 24px;
+    padding: 14px 16px;
   }
 
   .nav-links {
@@ -2052,7 +2060,8 @@ body {
     font-size: 44px;
   }
 
-  .biz-card, .team-card {
+  .biz-card,
+  .team-card {
     padding: 28px 20px;
   }
 
@@ -2091,29 +2100,47 @@ body {
   pointer-events: none;
   z-index: 0;
 }
+
 .tc-glow-1 {
   width: 260px;
   height: 260px;
-  background: radial-gradient(circle, rgba(99,102,241,0.35), transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.35), transparent 70%);
   top: -30px;
   left: 0;
   animation: tcGlow1 6s ease-in-out infinite;
 }
+
 .tc-glow-2 {
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle, rgba(167,139,250,0.3), transparent 70%);
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.3), transparent 70%);
   bottom: 20px;
   right: 10px;
   animation: tcGlow2 8s ease-in-out infinite;
 }
+
 @keyframes tcGlow1 {
-  0%, 100% { transform: translate(0,0) scale(1); }
-  50% { transform: translate(15px, 20px) scale(1.1); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(15px, 20px) scale(1.1);
+  }
 }
+
 @keyframes tcGlow2 {
-  0%, 100% { transform: translate(0,0) scale(1); }
-  50% { transform: translate(-10px, -15px) scale(1.08); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-10px, -15px) scale(1.08);
+  }
 }
 
 /* Phone shell */
@@ -2122,14 +2149,14 @@ body {
   z-index: 1;
   width: 230px;
   height: 490px;
-  background: linear-gradient(160deg, rgba(30,32,50,0.95), rgba(15,17,30,0.98));
+  background: linear-gradient(160deg, rgba(30, 32, 50, 0.95), rgba(15, 17, 30, 0.98));
   border-radius: 40px;
-  border: 2px solid rgba(255,255,255,0.12);
+  border: 2px solid rgba(255, 255, 255, 0.12);
   box-shadow:
-    0 0 0 1px rgba(99,102,241,0.3),
-    0 30px 80px rgba(0,0,0,0.7),
-    0 0 40px rgba(99,102,241,0.15),
-    inset 0 1px 0 rgba(255,255,255,0.1);
+    0 0 0 1px rgba(99, 102, 241, 0.3),
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(99, 102, 241, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   padding: 16px 10px 20px;
   display: flex;
   flex-direction: column;
@@ -2137,19 +2164,27 @@ body {
   gap: 0;
   animation: tcPhoneFloat 5s ease-in-out infinite;
 }
+
 @keyframes tcPhoneFloat {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50% { transform: translateY(-10px) rotate(0.5deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
 }
 
 /* Notch */
 .tc-phone-notch {
   width: 80px;
   height: 22px;
-  background: rgba(10,12,22,0.95);
+  background: rgba(10, 12, 22, 0.95);
   border-radius: 0 0 16px 16px;
   margin: 0 auto 8px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   flex-shrink: 0;
 }
 
@@ -2176,12 +2211,14 @@ body {
   opacity: 0;
   transform: scale(1.04) translateY(8px);
   transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .tc-slide.active {
   opacity: 1;
   transform: scale(1) translateY(0);
 }
+
 .tc-slide img {
   width: 100%;
   height: 100%;
@@ -2194,7 +2231,7 @@ body {
 .tc-phone-home-bar {
   width: 80px;
   height: 4px;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 10px;
   margin: 10px auto 0;
   flex-shrink: 0;
@@ -2208,21 +2245,23 @@ body {
   position: relative;
   z-index: 2;
 }
+
 .tc-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
   transition: all 0.4s ease;
 }
+
 .tc-dot.active {
   background: var(--primary-light);
   border-color: var(--primary-light);
   width: 22px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(129,140,248,0.6);
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.6);
 }
 
 /* Floating caption badges */
@@ -2233,52 +2272,75 @@ body {
   align-items: center;
   gap: 6px;
   background: rgba(15, 17, 30, 0.85);
-  border: 1px solid rgba(99,102,241,0.35);
+  border: 1px solid rgba(99, 102, 241, 0.35);
   border-radius: 30px;
   padding: 7px 14px;
   font-size: 12px;
   font-weight: 600;
   color: var(--text-primary);
   backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 12px rgba(99,102,241,0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 12px rgba(99, 102, 241, 0.2);
   white-space: nowrap;
 }
+
 .tc-badge-left {
   left: -10px;
   top: 100px;
   animation: tcBadgeLeft 5s ease-in-out infinite;
 }
+
 .tc-badge-right {
   right: -10px;
   bottom: 110px;
   animation: tcBadgeRight 5s ease-in-out infinite;
 }
+
 @keyframes tcBadgeLeft {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-4px) translateY(-4px); }
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-4px) translateY(-4px);
+  }
 }
+
 @keyframes tcBadgeRight {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(4px) translateY(4px); }
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+
+  50% {
+    transform: translateX(4px) translateY(4px);
+  }
 }
+
 .tc-badge-icon {
   font-size: 14px;
 }
+
 .tc-badge-text {
   letter-spacing: 0.2px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
+
   .tc-badge-left,
   .tc-badge-right {
     display: none;
   }
+
   .tc-phone {
     width: 200px;
     height: 420px;
   }
 }
+
 /* =================== EXTENDED ANIMATIONS =================== */
 
 .reveal {

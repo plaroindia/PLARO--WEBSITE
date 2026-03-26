@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact PLARO — Get In Touch</title>
+    <meta name="description"
+        content="Get in touch with PLARO. Whether you're a student, company, or investor, reach out to help us transform the future of education and skill-building." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://plaro.com/contact" />
+    <meta property="og:title" content="Contact PLARO — Get In Touch" />
+    <meta property="og:description"
+        content="Get in touch with PLARO. Whether you're a student, company, or investor, reach out to help us transform the future of education and skill-building." />
+    <meta property="og:image" content="https://plaro.com/og-image-contact.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://plaro.com/contact" />
+    <meta property="twitter:title" content="Contact PLARO — Get In Touch" />
+    <meta property="twitter:description"
+        content="Get in touch with PLARO. Whether you're a student, company, or investor, reach out to help us transform the future of education and skill-building." />
+    <meta property="twitter:image" content="https://plaro.com/og-image-contact.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .contact-header {
+            padding: 160px 24px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .contact-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .contact-section {
+            padding: 40px 0 120px;
+        }
+
+        /* Contact type selector */
+        .contact-type-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .contact-type-btn {
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .contact-type-btn.active,
+        .contact-type-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        /* Success state */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 60px 28px;
+        }
+
+        .form-success.visible {
+            display: block;
+        }
+
+        .form-success-icon {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .form-success h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .form-success p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" style="text-decoration: none;">
+                <img src="logo.png" alt="PLARO" class="logo-img">
+                <span class="logo-badge">Beta</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#taiken">Taiken</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="index.html#waitlist" class="nav-cta">Join Waitlist →</a>
+                <button class="mobile-toggle" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BACKGROUND ORBS -->
+    <div class="hero-bg" style="position: fixed; z-index: -1;">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- CONTACT HEADER -->
+    <header class="contact-header reveal">
+        <div class="container">
+            <p class="section-eyebrow">Contact Us</p>
+            <h1 class="contact-title">Let's <span class="gradient-text">talk</span></h1>
+            <p class="contact-subtitle">Whether you're a student curious about PLARO, a company interested in our talent
+                pipeline, or an investor who wants to learn more — we'd love to hear from you.</p>
+        </div>
+    </header>
+
+    <!-- CONTACT GRID SECTION -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid reveal-fade">
+
+                <!-- Left Column: Contact Form -->
+                <div class="contact-card">
+
+                    <!-- Who are you? -->
+                    <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; font-weight: 500;">I'm
+                        reaching out as a...</p>
+                    <div class="contact-type-row">
+                        <button class="contact-type-btn active" onclick="setType(this, 'Student')">🎓 Student</button>
+                        <button class="contact-type-btn" onclick="setType(this, 'Company / Recruiter')">🏢
+                            Company</button>
+                        <button class="contact-type-btn" onclick="setType(this, 'Investor')">📈 Investor</button>
+                        <button class="contact-type-btn" onclick="setType(this, 'Other')">💬 Other</button>
+                    </div>
+
+                    <!-- The actual form — wired to Formspree -->
+                    <form id="contact-form" action="https://formspree.io/f/xykbyqev" method="POST">
+                        <input type="hidden" name="contact_type" id="contact-type-field" value="Student" />
+
+                        <div class="form-group">
+                            <label class="form-label" for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name"
+                                required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="Enter your email address" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Message</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="Tell us what's on your mind..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Message <span style="margin-left:8px;">✉</span>
+                        </button>
+                    </form>
+
+                    <!-- Success state -->
+                    <div class="form-success" id="form-success">
+                        <div class="form-success-icon">✅</div>
+                        <h3>Message sent!</h3>
+                        <p>Thanks for reaching out. We'll get back to you at your email address within 1–2 business
+                            days.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Connect With Us -->
+                <div class="contact-card contact-card-info">
+                    <h3 class="feature-title" style="margin-bottom: 30px;">Connect With Us</h3>
+
+                    <ul class="contact-info-list">
+                        <li class="contact-info-item">
+                            <div class="contact-info-icon">✉</div>
+                            <div class="contact-info-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:plaroindia@gmail.com"
+                                        style="color: var(--primary-light); text-decoration: none;">plaroindia@gmail.com</a>
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="contact-info-item">
+                            <div class="contact-info-icon">🎓</div>
+                            <div class="contact-info-text">
+                                <h4>Incubation Centre</h4>
+                                <p>Sri Manakula Vinayagar Engineering College<br>Puducherry, India</p>
+                            </div>
+                        </li>
+
+                        <li class="contact-info-item">
+                            <div class="contact-info-icon">📍</div>
+                            <div class="contact-info-text">
+                                <h4>Registered Address</h4>
+                                <p>No. 24, Mariyamman Koil Street <br> Madagadipet, Puducherry - 605107<br>India</p>
+                            </div>
+                        </li>
+
+                        <li class="contact-info-item">
+                            <div class="contact-info-icon">📈</div>
+                            <div class="contact-info-text">
+                                <h4>Investors</h4>
+                                <p>Interested in PLARO? Email us with subject line <strong
+                                        style="color: var(--text-primary);">"Investor Inquiry"</strong> and we'll send
+                                    you our pitch deck.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="PLARO" class="logo-img logo-img-footer">
+                    <p>Where students learn practical skills,<br />prove capability, and launch careers.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#taiken">Taiken</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 PLARO. All rights reserved.</span>
+                <span class="footer-dot">·</span>
+                <span>Close the gap. Build your career.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Contact type selector
+        function setType(btn, type) {
+            document.querySelectorAll('.contact-type-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('contact-type-field').value = type;
+        }
+
+        // Form submission — uses Formspree via Fetch
+        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    document.getElementById('contact-form').style.display = 'none';
+                    document.getElementById('form-success').classList.add('visible');
+                } else {
+                    alert("Oops! There was a problem right now. Please try again.");
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                alert("Oops! There was a problem right now. Please try again.");
+            }
+        });
+
+        // Reveal animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

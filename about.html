@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About PLARO — Learning-First Social Platform</title>
+    <meta name="description"
+        content="Plaro is a learning-first social platform where content turns into skills. Discover the story behind the platform that combines education, interactivity, and AI personalization." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://plaro.com/about" />
+    <meta property="og:title" content="About PLARO — Learning-First Social Platform" />
+    <meta property="og:description" content="Plaro transforms how people learn by combining social engagement, interactive learning, and AI personalization. Where scrolling makes you smarter." />
+    <meta property="og:image" content="https://plaro.com/og-image-about.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://plaro.com/about" />
+    <meta property="twitter:title" content="About PLARO — Learning-First Social Platform" />
+    <meta property="twitter:description" content="Plaro is where learning meets social media. An AI-powered platform that turns content into skills through interactive learning experiences." />
+    <meta property="twitter:image" content="https://plaro.com/og-image-about.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .about-header {
+            padding: 160px 24px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .about-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Journey / Story Section */
+        .journey-section {
+            background: var(--gradient-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            margin: 60px 0;
+        }
+
+        .journey-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(99, 102, 241, 0.03);
+            backdrop-filter: blur(10px);
+            z-index: 0;
+        }
+
+        .journey-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .journey-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .journey-text {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+
+        .journey-text strong {
+            color: var(--text-primary);
+        }
+
+        /* Milestone Timeline */
+        .milestones-section {
+            padding: 80px 0;
+        }
+
+        .milestone-list {
+            max-width: 700px;
+            margin: 48px auto 0;
+            position: relative;
+        }
+
+        .milestone-list::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 0; bottom: 0;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .milestone-item {
+            display: flex;
+            gap: 28px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .milestone-dot {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .milestone-body {
+            padding-top: 6px;
+        }
+
+        .milestone-date {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary-light);
+            margin-bottom: 4px;
+        }
+
+        .milestone-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .milestone-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Core Values */
+        .core-values-section {
+            padding: 60px 0 120px;
+        }
+
+        .value-icon {
+            font-size: 42px;
+            margin-bottom: 16px;
+            text-align: center;
+            display: block;
+            animation: pulse 4s ease-in-out infinite alternate;
+        }
+
+        .value-title {
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 12px;
+            color: var(--text-primary);
+        }
+
+        .value-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.4)); }
+            100% { transform: scale(1.05); filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.6)); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* CTA Strip */
+        .about-cta-strip {
+            border-top: 1px solid var(--border);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-cta-strip h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .about-cta-strip p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .cta-button-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" style="text-decoration: none;">
+                <img src="logo.png" alt="PLARO" class="logo-img">
+                <span class="logo-badge">Beta</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#taiken">Taiken</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="index.html#waitlist" class="nav-cta">Join Waitlist →</a>
+                <button class="mobile-toggle" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BACKGROUND ORBS -->
+    <div class="hero-bg" style="position: fixed; z-index: -1;">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- ABOUT HEADER -->
+    <header class="about-header reveal">
+        <div class="container">
+            <p class="section-eyebrow">About PLARO</p>
+            <h1 class="about-title">Scrolling should make you <span class="gradient-text">smarter.</span></h1>
+            <p class="about-subtitle">We built a platform where social media engagement meets real learning. Where content consumption becomes skill-building, and every minute online counts toward something meaningful.</p>
+        </div>
+    </header>
+
+    <!-- MISSION & VISION -->
+    <section class="features-section">
+        <div class="container">
+            <div class="feature-row-2 reveal-scale">
+
+                <div class="feature-card feature-accent">
+                    <div class="feature-icon-wrap" style="text-align: center;">
+                        <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><path d="M12 8v-1m4 4h1m-8 0H7m5 5v1"></path><path d="M16.24 7.76a6 6 0 0 0-8.48 8.48"></path></svg></div>
+                    </div>
+                    <h3 class="feature-title" style="text-align: center;">Mission</h3>
+                    <p class="feature-tagline" style="text-align: center; margin-bottom: 20px;">Make learning engaging and practical</p>
+                    <p style="color: var(--text-secondary); line-height: 1.75;">
+                        Make learning engaging, practical, and part of everyday digital life. Plaro empowers users to learn through content, apply knowledge through interactive experiences, and build real skills—not just consume information.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrap" style="text-align: center;">
+                        <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+                    </div>
+                    <h3 class="feature-title" style="text-align: center;">Vision</h3>
+                    <p class="feature-tagline" style="text-align: center; margin-bottom: 20px;">Social media that helps people grow</p>
+                    <p style="color: var(--text-secondary); line-height: 1.75;">
+                        A world where social media helps people grow, not just scroll. Where every minute spent online contributes to real knowledge, real skills, and real progress—regardless of background or college. Learning becomes as natural as social media.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="journey-section reveal">
+        <div class="container">
+            <div class="journey-content">
+                <h2 class="journey-title">Why We Built This</h2>
+                <p class="journey-text">
+                    We observed a problem: students spend 3-4 hours daily on social media, but almost none of it translates to learning. Meanwhile, online education platforms feel boring and disconnected from how people actually learn.
+                </p>
+                <p class="journey-text">
+                    We also know from learning science that <strong>people don't remember what they watch—they remember what they do.</strong> Interactive learning, personalized recommendations, and consistent practice build real knowledge. But most platforms are designed for passive consumption, not active learning.
+                </p>
+                <p class="journey-text">
+                    <strong>Plaro is the result:</strong> a platform that combines the engagement mechanics of social media (community, discovery, personalization, consistency rewards) with proven learning principles (active practice, immediate feedback, social accountability). Instead of scrolling for entertainment, users learn, practice, and build skills through interactive experiences called Taikens.
+                </p>
+                <p class="journey-text">
+                    We're not building another course platform. We're building a place where learning is as engaging as social media, but with purpose—where every hour online makes you measurably smarter.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MILESTONES -->
+    <section class="milestones-section reveal">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 8px;">
+                <p class="section-eyebrow">Our Timeline</p>
+                <h2 class="section-title" style="font-size: 36px;">How we got <span class="gradient-text">here</span></h2>
+            </div>
+
+            <div class="milestone-list">
+                <div class="milestone-item">
+                    <div class="milestone-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"></circle></svg></div>
+                    <div class="milestone-body">
+                        <div class="milestone-date">2024 — Discovery</div>
+                        <div class=\"milestone-title\">Identified the learning problem</div>
+                        <div class=\"milestone-desc\">Researched how students learn best and why passive consumption fails. Found the gap: social media is engaging but educationally worthless. Validated the demand for learning-first social platform.</div>
+                    </div>
+                </div>
+
+                <div class="milestone-item">
+                    <div class="milestone-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"></circle></svg></div>
+                    <div class="milestone-body">
+                        <div class="milestone-date">2024 — Validation</div>
+                        <div class=\"milestone-title\">Got institutional mentorship</div>
+                        <div class=\"milestone-desc\">PLARO accepted into SMVEC incubation program. Gained mentorship and direct access to student communities to test learning hypotheses and refine the platform.</div>
+                    </div>
+                </div>
+
+                <div class="milestone-item">
+                    <div class="milestone-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"></circle></svg></div>
+                    <div class="milestone-body">
+                        <div class="milestone-date">2025 — Development</div>
+                        <div class=\"milestone-title\">Built the learning platform</div>
+                        <div class=\"milestone-desc\">Developed PEARL AI for personalization, Taiken interactive learning system, and content curation engine. Tested with student cohorts and refined based on engagement and learning outcomes.</div>
+                    </div>
+                </div>
+
+                <div class="milestone-item">
+                    <div class="milestone-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"></circle></svg></div>
+                    <div class="milestone-body">
+                        <div class="milestone-date">2026 — Launch</div>
+                        <div class="milestone-title">Pre-launch phase</div>
+                        <div class="milestone-desc">Product is complete. Building waitlist and partnerships with educational institutions. Launching public beta in Q2 2026.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="core-values-section reveal">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p class="section-eyebrow">Core Values</p>
+                <h2 class="section-title" style="font-size: 36px;">What we <span class="gradient-text">stand for</span></h2>
+            </div>
+
+            <div class="feature-row-4">
+                <div class="feature-card" style="padding: 30px 20px;">
+                    <span class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    <h3 class="value-title">Real over Hype</h3>
+                    <p class="value-desc">Building tools that solve actual problems, not just trendy ideas. We measure success by career outcomes, not user vanity metrics.</p>
+                </div>
+
+                <div class="feature-card feature-accent" style="padding: 30px 20px;">
+                    <span class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4l4 4-8 8-4-4 8-8z"></path><path d="M3 21h18"></path></svg></span>
+                    <h3 class="value-title">Practical Learning</h3>
+                    <p class=\"value-desc\">Every feature is designed around how people actually learn. Do first, understand second. Interactive over passive. Learning that sticks, not information that fades.</p>
+                </div>
+
+                <div class="feature-card" style="padding: 30px 20px;">
+                    <span class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></span>
+                    <h3 class="value-title">Earned Progress</h3>
+                    <p class="value-desc">On PLARO, your rank and opportunities are earned through skills and contribution, not follower counts or engagement metrics.</p>
+                </div>
+
+                <div class="feature-card feature-accent" style="padding: 30px 20px;">
+                    <span class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6m3-3H9"></path></svg></span>
+                    <h3 class="value-title">Equitable Access</h3>
+                    <p class="value-desc">Quality career opportunities shouldn't depend on your college name or city. They should depend on what you can actually do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUSINESS MODEL -->
+    <section class="biz-section reveal" id="model">
+        <div class="container">
+            <p class="section-eyebrow">Business Model</p>
+            <h2 class="section-title">A <span class="gradient-text">sustainable</span> three-sided model</h2>
+            <p class="section-desc">We align incentives across students, companies, and the platform.</p>
+
+            <div class="biz-grid reveal-fade">
+                <div class="biz-card">
+                    <div class="biz-tag">Students</div>
+                    <span class="biz-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                    <div class="biz-title">Free + Premium Model</div>
+                    <div class="biz-desc">Core features free for all students (Bytes, basic Taikens, portfolio). Premium tier unlocks advanced simulations, mentor access, and priority job matching.</div>
+                    <div class="biz-revenue">Revenue: Student subscriptions</div>
+                </div>
+
+                <div class="biz-card biz-card-accent">
+                    <div class="biz-tag">Employers</div>
+                    <span class="biz-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M7 2v20M17 2v20M2 12h20M2 7h20M2 17h20"></path></svg></span>
+                    <div class="biz-title">B2B Talent Platform</div>
+                    <div class="biz-desc">Companies pay to access verified talent, search by skills/simulation scores, post job opportunities, and run hiring campaigns. Enterprise plans available.</div>
+                    <div class="biz-revenue">Revenue: B2B SaaS subscriptions</div>
+                </div>
+
+                <div class="biz-card">
+                    <div class="biz-tag">Marketplace</div>
+                    <span class="biz-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><path d="M10 12v4M14 12v4"></path></svg></span>
+                    <div class="biz-title">Opportunity Commissions</div>
+                    <div class="biz-desc">PLARO takes a platform fee on freelance projects, part-time gigs, and contract work completed through the platform's opportunity matching system.</div>
+                    <div class="biz-revenue">Revenue: Transaction commissions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CTA STRIP -->
+    <section class="about-cta-strip reveal">
+        <div class="container reveal-scale">
+            <h3>Ready to see what PLARO can do for you?</h3>
+            <p>Whether you're a student looking to get ahead, or a company looking for real talent.</p>
+            <div class="cta-button-row">
+                <a href="index.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
+                <a href="contact.html" class="btn btn-ghost">Get In Touch →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="PLARO" class="logo-img logo-img-footer">
+                    <p>Where students learn practical skills,<br />prove capability, and launch careers.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#taiken">Taiken</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 PLARO. All rights reserved.</span>
+                <span class="footer-dot">·</span>
+                <span>Close the gap. Build your career.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
